@@ -180,48 +180,108 @@
     footer{padding:28px 0 40px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px;}
     .foot{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
 
-    .modal-overlay{position:fixed; inset:0; z-index:90; background: rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; padding:18px;}
-    .modal{
-      width: min(560px, 100%);
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(11,16,32,.88);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .modal-head{padding:16px 16px 0; display:flex; align-items:center; justify-content:space-between; gap:10px;}
-    .modal-head h3{margin:0; font-size:16px}
-    .x{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.14);
-      color: var(--text);
-      width:38px; height:38px;
-      border-radius: 12px;
-      cursor:pointer;
-      font-weight:900;
-    }
-    .modal-body{padding:16px}
-    .form{display:grid; gap:10px; grid-template-columns: 1fr 1fr;}
-    .form label{display:grid; gap:6px; font-size:12px; color: var(--muted); font-weight:700}
-    .form input, .form select{
-      width:100%; padding:12px 12px; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      outline:none;
-    }
-    .form input::placeholder{color: rgba(255,255,255,.45)}
-    .form .full{grid-column: 1 / -1}
-    .modal-actions{padding:0 16px 16px; display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
     .hint{margin:8px 0 0; color: var(--muted); font-size:12px; line-height:1.6}
 
     @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
     @media (max-width: 640px){
       .menu{display:none}
-      .form{grid-template-columns:1fr}
       .grid-2,.grid-3{grid-template-columns:1fr}
       .kpi{min-width: 100%}
+    }
+
+    /* ==========================
+       ✅ PREINSCRIPCIÓN: PRÓXIMAMENTE + COUNTDOWN + ICONO
+       ========================== */
+    .soon{
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      padding:28px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(31,59,115,.20), rgba(37,99,235,.14));
+      box-shadow: var(--shadow);
+    }
+    .soon::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 180px at 20% 20%, rgba(255,255,255,.10), transparent 60%),
+                  radial-gradient(520px 220px at 85% 30%, rgba(37,99,235,.18), transparent 60%),
+                  radial-gradient(520px 220px at 50% 90%, rgba(31,59,115,.22), transparent 60%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .soon > *{ position:relative; z-index:1; }
+
+    .soon-header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .inst-icon{
+      width:56px; height:56px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 36px rgba(0,0,0,.35);
+      object-fit: contain;
+      padding:10px;
+    }
+
+    .shine{display:inline-flex; align-items:center; justify-content:center; gap:10px;}
+    .pulse-dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 0 0 0 rgba(255,255,255,.45);
+      animation: pulse 1.4s infinite;
+    }
+    @keyframes pulse{
+      0%{ box-shadow: 0 0 0 0 rgba(255,255,255,.35); transform: scale(1); opacity:.9;}
+      70%{ box-shadow: 0 0 0 14px rgba(255,255,255,0); transform: scale(1.05); opacity:1;}
+      100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0); transform: scale(1); opacity:.9;}
+    }
+
+    .floaty{display:inline-block; animation: floaty 2.8s ease-in-out infinite;}
+    @keyframes floaty{
+      0%,100%{ transform: translateY(0px); }
+      50%{ transform: translateY(-4px); }
+    }
+
+    .soon-title{margin:10px 0 6px; font-size: 22px; letter-spacing:-.02em;}
+    .soon-text{margin:0 auto; max-width: 72ch; color: var(--muted); line-height: 1.7; font-size:14px;}
+
+    .countdown{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .timebox{
+      min-width: 110px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding:12px 14px;
+    }
+    .timebox b{display:block; font-size: 26px; letter-spacing:-.02em;}
+    .timebox span{
+      display:block;
+      margin-top:4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing:.2px;
+    }
+    .soon-actions{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:16px;
     }
   </style>
 </head>
@@ -244,10 +304,10 @@
           <a href="#vision">VISIÓN</a>
           <a href="#historia">HISTORIA</a>
           <a href="#directorio">DIRECTORIO</a>
-          <button class="btn btn-primary" type="button" onclick="openModal()">Pre-inscripción</button>
+          <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
         </nav>
 
-        <button class="btn btn-primary" type="button" onclick="openModal()">Pre-inscripción</button>
+        <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
       </div>
     </div>
   </div>
@@ -263,7 +323,7 @@
             contactología y atención integral en servicios vinculados a la salud visual.
           </p>
           <div class="hero-actions">
-            <button class="btn btn-primary" onclick="openModal()">✨ Quiero pre-inscribirme</button>
+            <a class="btn btn-primary" href="#preinscripcion">✨ Quiero pre-inscribirme</a>
             <a class="btn btn-ghost" href="#plan">Ver plan de estudios</a>
           </div>
           <div class="mini">
@@ -359,7 +419,7 @@
             </div>
             <div class="kpi">
               <b>Pre-inscripción</b>
-              <span>Vía WhatsApp</span>
+              <span>Próximamente</span>
             </div>
           </div>
         </div>
@@ -450,7 +510,7 @@
         </div>
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-          <button class="btn btn-primary" onclick="openModal()">Pre-inscripción</button>
+          <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
           <a class="btn btn-ghost" href="#directorio">Ver directorio</a>
         </div>
       </div>
@@ -496,6 +556,41 @@
     </div>
   </section>
 
+  <!-- ✅ NUEVA SECCIÓN: PREINSCRIPCIÓN EN CONSTRUCCIÓN -->
+  <section id="preinscripcion">
+    <div class="container">
+      <div class="soon">
+        <div class="soon-header">
+          <img class="inst-icon floaty" src="Logo.jpg" alt="TESÃ Paraguay" />
+          <div class="pill shine"><span class="pulse-dot"></span> Próximamente</div>
+        </div>
+
+        <h2 class="soon-title">Pre-inscripción en preparación</h2>
+        <p class="soon-text">
+          Estamos habilitando el sistema de pre-inscripción online para el
+          <strong>Técnico Superior en Óptica y Contactología</strong>.
+          Mientras tanto, podés escribirnos por WhatsApp y te guiamos.
+        </p>
+
+        <div class="countdown" aria-label="Cuenta regresiva">
+          <div class="timebox"><b id="cdDays">—</b><span>DÍAS</span></div>
+          <div class="timebox"><b id="cdHours">—</b><span>HORAS</span></div>
+          <div class="timebox"><b id="cdMins">—</b><span>MIN</span></div>
+          <div class="timebox"><b id="cdSecs">—</b><span>SEG</span></div>
+        </div>
+
+        <div class="soon-actions">
+          <a class="btn btn-primary" href="https://wa.me/595971797545" target="_blank" rel="noopener">📲 Contactar por WhatsApp</a>
+          <a class="btn btn-ghost" href="#inicio">← Volver al inicio</a>
+        </div>
+
+        <p class="hint" style="margin-top:14px;">
+          Horario: Lun–Vie 19:00–22:00 · Dirección: Azara e/ Estados Unidos y Brazil
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="foot">
@@ -507,12 +602,13 @@
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
           <a class="btn btn-ghost" href="#inicio">Volver arriba</a>
-          <button class="btn btn-primary" onclick="openModal()">Pre-inscripción</button>
+          <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- ✅ MODAL DESACTIVADO (lo podés reactivar cuando quieras)
   <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Formulario de pre-inscripción">
     <div class="modal">
       <div class="modal-head">
@@ -521,33 +617,7 @@
       </div>
       <div class="modal-body">
         <form id="preForm" class="form">
-          <label class="full">Nombre y apellido
-            <input name="nombre" placeholder="Ej: Juan Pérez" required />
-          </label>
-
-          <label>Documento
-            <input name="documento" placeholder="CI" required />
-          </label>
-
-          <label>Teléfono / WhatsApp
-            <input name="telefono" placeholder="Ej: 0971 000 000" required />
-          </label>
-
-          <label class="full">Correo (opcional)
-            <input name="correo" type="email" placeholder="correo@ejemplo.com" />
-          </label>
-
-          <label class="full">Carrera de interés
-            <select name="carrera">
-              <option>Técnico Superior en Óptica y Contactología (2 años · mixta)</option>
-            </select>
-          </label>
-
-          <label class="full">Mensaje (opcional)
-            <input name="mensaje" placeholder="Horario preferido, consultas, etc." />
-          </label>
-
-          <p class="hint full">Al enviar, se abrirá WhatsApp con el mensaje listo para mandar al instituto.</p>
+          ...
         </form>
       </div>
       <div class="modal-actions">
@@ -556,41 +626,50 @@
       </div>
     </div>
   </div>
+  -->
 
   <script>
-    const modal = document.getElementById('modal');
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    function openModal(){ modal.style.display = 'flex'; }
-    function closeModal(){ modal.style.display = 'none'; }
+    // ✅ Cuenta regresiva (EDITÁ la fecha si querés)
+    // Paraguay: -03:00
+    const launchDate = new Date("2026-03-01T19:00:00-03:00"); // ← cambiá esta fecha
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+    const elD = document.getElementById("cdDays");
+    const elH = document.getElementById("cdHours");
+    const elM = document.getElementById("cdMins");
+    const elS = document.getElementById("cdSecs");
 
-    function submitPre(){
-      const form = document.getElementById('preForm');
-      if(!form.reportValidity()) return;
+    function pad2(n){ return String(n).padStart(2, "0"); }
 
-      const data = Object.fromEntries(new FormData(form).entries());
-      const msg =
-`Hola TESÃ PARAGUAY, quiero pre-inscribirme:
-- Nombre: ${data.nombre}
-- Documento: ${data.documento}
-- Tel: ${data.telefono}
-- Correo: ${data.correo || "(no informado)"}
-- Carrera: ${data.carrera}
-- Mensaje: ${data.mensaje || "(sin mensaje)"}
+    function tick(){
+      const now = new Date();
+      const diff = launchDate - now;
 
-Horario: Lunes a viernes 19:00 a 22:00
-Dirección: Azara e/ Estados Unidos y Brazil`;
+      if (!elD || !elH || !elM || !elS) return;
 
-      const phone = "595971797545";
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-      window.open(url, "_blank");
-      closeModal();
-      form.reset();
+      if (diff <= 0){
+        elD.textContent = "0";
+        elH.textContent = "00";
+        elM.textContent = "00";
+        elS.textContent = "00";
+        return;
+      }
+
+      const sec = Math.floor(diff / 1000);
+      const days = Math.floor(sec / 86400);
+      const hours = Math.floor((sec % 86400) / 3600);
+      const mins = Math.floor((sec % 3600) / 60);
+      const secs = sec % 60;
+
+      elD.textContent = String(days);
+      elH.textContent = pad2(hours);
+      elM.textContent = pad2(mins);
+      elS.textContent = pad2(secs);
     }
+
+    tick();
+    setInterval(tick, 1000);
   </script>
 </body>
 </html>
