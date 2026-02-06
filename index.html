@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TESÃ PARAGUAY | Instituto Técnico Superior</title>
+  <meta name="description" content="TESÃ PARAGUAY - Técnico Superior en Óptica y Contactología (2 años, modalidad mixta)." />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.12);
+      --accent: #1f3b73;
+      --accent2: #2563eb;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 15% 0%, rgba(37,99,235,.22), transparent 60%),
+        radial-gradient(900px 450px at 85% 10%, rgba(31,59,115,.22), transparent 55%),
+        radial-gradient(800px 450px at 50% 100%, rgba(59,130,246,.16), transparent 60%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(14px); background: rgba(11,16,32,.65); border-bottom: 1px solid var(--line);}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+    .brand{display:flex; align-items:center; gap:12px; min-width:220px;}
+    .logo-img{
+      width:44px; height:44px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 12px 36px rgba(0,0,0,.35);
+      object-fit: cover;
+      padding:6px;
+    }
+    .brand-title{font-size:14px; line-height:1; font-weight:900;}
+    .brand-sub{font-size:11px; color:var(--muted); font-weight:700; margin-top:4px;}
+    .menu{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:flex-end;}
+    .menu a{
+      padding:10px 12px; border-radius:999px; color: var(--muted);
+      border: 1px solid transparent; transition: .2s ease; font-weight:650; font-size: 13px;
+    }
+    .menu a:hover{color: var(--text); border-color: var(--line); background: rgba(255,255,255,.04);}
+
+    .btn{
+      border:0; cursor:pointer; padding:10px 14px; border-radius:999px;
+      font-weight:850; transition:.2s ease; display:inline-flex; gap:10px; align-items:center; justify-content:center; white-space:nowrap;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:white; box-shadow: 0 18px 50px rgba(37,99,235,.18);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .btn-primary:hover{transform: translateY(-1px); filter: brightness(1.05)}
+    .btn-ghost{background: rgba(255,255,255,.05); color: var(--text); border: 1px solid var(--line);}
+    .btn-ghost:hover{background: rgba(255,255,255,.08)}
+
+    .hero{padding:42px 0 26px}
+    .hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:18px;}
+    .hero-card{
+      border-radius: var(--radius2); border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow); padding:28px; overflow:hidden;
+    }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: var(--muted); font-weight:750; font-size: 12px;
+    }
+    h1{margin:14px 0 10px; font-size: clamp(30px, 3.2vw, 44px); line-height:1.05; letter-spacing:-.02em;}
+    .lead{margin: 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.65; max-width: 78ch;}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap}
+    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color: var(--muted); font-weight:650; font-size: 12px;}
+    .mini span{border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); padding:8px 10px; border-radius: 999px;}
+
+    .side{display:grid; gap:14px;}
+    .info-card{border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255,255,255,.05); padding:16px;}
+    .info-card h3{margin:0 0 8px; font-size:14px}
+    .info-card p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    section{padding:24px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:12px;}
+    .section-title h2{margin:0; font-size: 18px; letter-spacing:.2px;}
+    .section-title p{margin:0; color: var(--muted); font-size: 13px;}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+    .card{border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255,255,255,.05); padding:16px;}
+    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+
+    .program{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(31,59,115,.18), rgba(37,99,235,.16));
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .program-top{display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
+    .kpis{display:flex; gap:10px; flex-wrap:wrap}
+    .kpi{border:1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); border-radius: 14px; padding:10px 12px; min-width: 200px;}
+    .kpi b{display:block; font-size:16px}
+    .kpi span{color:var(--muted); font-size:12px}
+
+    .accordion{display:grid; gap:10px; margin-top:12px;}
+    details{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding:14px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      font-weight:900;
+    }
+    summary::-webkit-details-marker{display:none}
+    .sum-left{display:flex; gap:10px; align-items:center}
+    .badge{
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .chev{
+      width:34px; height:34px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      display:grid; place-items:center;
+      color: var(--muted);
+      font-weight:900;
+      transition: .2s ease;
+      flex: 0 0 auto;
+    }
+    details[open] .chev{transform: rotate(180deg); color: var(--text)}
+    .details-body{padding: 0 14px 14px;}
+    .subjects{
+      margin:10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height:1.9;
+      font-size:14px;
+    }
+    .subjects li{padding:2px 0}
+
+    .person{display:flex; gap:12px; align-items:flex-start;}
+    .avatar{
+      width:44px; height:44px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      display:grid; place-items:center;
+      font-weight:900;
+      color: rgba(255,255,255,.9);
+    }
+    .person small{display:block; color: var(--muted); margin-top:4px}
+
+    footer{padding:28px 0 40px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px;}
+    .foot{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+
+    .modal-overlay{position:fixed; inset:0; z-index:90; background: rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; padding:18px;}
+    .modal{
+      width: min(560px, 100%);
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(11,16,32,.88);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .modal-head{padding:16px 16px 0; display:flex; align-items:center; justify-content:space-between; gap:10px;}
+    .modal-head h3{margin:0; font-size:16px}
+    .x{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--text);
+      width:38px; height:38px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight:900;
+    }
+    .modal-body{padding:16px}
+    .form{display:grid; gap:10px; grid-template-columns: 1fr 1fr;}
+    .form label{display:grid; gap:6px; font-size:12px; color: var(--muted); font-weight:700}
+    .form input, .form select{
+      width:100%; padding:12px 12px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline:none;
+    }
+    .form input::placeholder{color: rgba(255,255,255,.45)}
+    .form .full{grid-column: 1 / -1}
+    .modal-actions{padding:0 16px 16px; display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;}
+    .hint{margin:8px 0 0; color: var(--muted); font-size:12px; line-height:1.6}
+
+    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
+    @media (max-width: 640px){
+      .menu{display:none}
+      .form{grid-template-columns:1fr}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+      .kpi{min-width: 100%}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img class="logo-img" src="Logo.jpg" alt="Logo TESÃ Paraguay" />
+          <div>
+            <div class="brand-title">TESÃ PARAGUAY</div>
+            <div class="brand-sub">Instituto Técnico Superior</div>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Secciones">
+          <a href="#inicio">INICIO</a>
+          <a href="#mision">MISIÓN</a>
+          <a href="#vision">VISIÓN</a>
+          <a href="#historia">HISTORIA</a>
+          <a href="#directorio">DIRECTORIO</a>
+          <button class="btn btn-primary" type="button" onclick="openModal()">Pre-inscripción</button>
+        </nav>
+
+        <button class="btn btn-primary" type="button" onclick="openModal()">Pre-inscripción</button>
+      </div>
+    </div>
+  </div>
+
+  <header id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="pill">🎓 Técnico Superior · 2 años · modalidad mixta</div>
+          <h1>TESÃ PARAGUAY<br/>Técnico Superior en Óptica y Contactología</h1>
+          <p class="lead">
+            Formación con enfoque práctico y académico para desarrollar competencias profesionales en óptica,
+            contactología y atención integral en servicios vinculados a la salud visual.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="openModal()">✨ Quiero pre-inscribirme</button>
+            <a class="btn btn-ghost" href="#plan">Ver plan de estudios</a>
+          </div>
+          <div class="mini">
+            <span>🕒 Lunes a viernes · 19:00 a 22:00</span>
+            <span>📌 Teoría + práctica</span>
+            <span>🧪 Taller/laboratorio</span>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="info-card">
+            <h3>📍 Ubicación</h3>
+            <p>
+              Dirección: <strong>Azara e/ Estados Unidos y Brazil</strong><br/>
+              Tel/WhatsApp: <strong>0971 797 545</strong>
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>🕒 Horario</h3>
+            <p><strong>Lunes a viernes</strong> · <strong>19:00 a 22:00</strong></p>
+          </div>
+          <div class="info-card">
+            <h3>✅ Dirección</h3>
+            <p>Directora: <strong>Yolanda Ovando</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container grid-2">
+      <div id="mision" class="card">
+        <div class="section-title">
+          <h2>MISIÓN</h2>
+          <p>Qué hacemos</p>
+        </div>
+        <p>
+          Formar profesionales en óptica con base científica y práctica, promoviendo la ética,
+          la calidad de servicio y el compromiso con la salud visual.
+        </p>
+      </div>
+
+      <div id="vision" class="card">
+        <div class="section-title">
+          <h2>VISIÓN</h2>
+          <p>Hacia dónde vamos</p>
+        </div>
+        <p>
+          Ser un instituto referente en la formación de profesionales del área,
+          reconocido por su excelencia académica e innovación educativa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="container">
+      <div class="card">
+        <div class="section-title">
+          <h2>HISTORIA</h2>
+          <p>Nuestro recorrido</p>
+        </div>
+        <p>
+          TESÃ PARAGUAY nace con el objetivo de brindar formación sólida y accesible en óptica y contactología,
+          priorizando la práctica, la actualización y el acompañamiento al estudiante.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="container">
+      <div class="program">
+        <div class="program-top">
+          <div>
+            <div class="pill">📘 Plan de estudios</div>
+            <h2 style="margin-top:10px">Técnico Superior en Óptica y Contactología</h2>
+            <p class="lead" style="margin:10px 0 0; max-width: 80ch;">
+              Duración: <strong>2 años</strong> (4 semestres) · Modalidad: <strong>mixta</strong> ·
+              Horario: <strong>Lunes a viernes 19:00 a 22:00</strong>.
+            </p>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi">
+              <b>Duración</b>
+              <span>2 años (4 semestres)</span>
+            </div>
+            <div class="kpi">
+              <b>Horario</b>
+              <span>Lun–Vie · 19:00–22:00</span>
+            </div>
+            <div class="kpi">
+              <b>Pre-inscripción</b>
+              <span>Vía WhatsApp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <details open>
+            <summary>
+              <div class="sum-left">
+                <span class="badge">1° Semestre</span>
+                <span>Asignaturas</span>
+              </div>
+              <span class="chev">⌄</span>
+            </summary>
+            <div class="details-body">
+              <ul class="subjects">
+                <li>Óptica Oftálmica Teoría I</li>
+                <li>Óptica Oftálmica Taller I</li>
+                <li>Contactología I</li>
+                <li>Óptica Ocular</li>
+                <li>Comunicación Oral y Escrita</li>
+                <li>Matemática</li>
+                <li>Aprendizaje en Entornos Virtuales</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <div class="sum-left">
+                <span class="badge">2° Semestre</span>
+                <span>Asignaturas</span>
+              </div>
+              <span class="chev">⌄</span>
+            </summary>
+            <div class="details-body">
+              <ul class="subjects">
+                <li>Marketing</li>
+                <li>Metodología de la Investigación</li>
+                <li>Oftálmica Taller II</li>
+                <li>Química</li>
+                <li>Física</li>
+                <li>Oftálmica Teoría II</li>
+                <li>Contactología II</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <div class="sum-left">
+                <span class="badge">3° Semestre</span>
+                <span>Asignaturas</span>
+              </div>
+              <span class="chev">⌄</span>
+            </summary>
+            <div class="details-body">
+              <ul class="subjects">
+                <li>Óptica Física</li>
+                <li>Administración en Salud</li>
+                <li>Seguridad en el Trabajo</li>
+                <li>Oftálmica Teoría III</li>
+                <li>Oftálmica Taller III</li>
+                <li>Contactología III</li>
+                <li>Química Aplicada</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <div class="sum-left">
+                <span class="badge">4° Semestre</span>
+                <span>Asignaturas</span>
+              </div>
+              <span class="chev">⌄</span>
+            </summary>
+            <div class="details-body">
+              <ul class="subjects">
+                <li>Legislación y Ética Profesional</li>
+                <li>Salud Pública</li>
+                <li>Óptica Geométrica</li>
+                <li>Oftálmica Teoría IV</li>
+                <li>Oftálmica Taller IV</li>
+                <li>Contactología IV</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <button class="btn btn-primary" onclick="openModal()">Pre-inscripción</button>
+          <a class="btn btn-ghost" href="#directorio">Ver directorio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="directorio">
+    <div class="container">
+      <div class="section-title">
+        <h2>DIRECTORIO</h2>
+        <p>Equipo institucional</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="person">
+            <div class="avatar">YO</div>
+            <div>
+              <strong>Directora</strong>
+              <small>Yolanda Ovando</small>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="person">
+            <div class="avatar">AD</div>
+            <div>
+              <strong>Administración</strong>
+              <small>WhatsApp: 0971 797 545</small>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="person">
+            <div class="avatar">AC</div>
+            <div>
+              <strong>Área Académica</strong>
+              <small>Contacto: 0971 797 545</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <strong style="color:var(--text)">TESÃ PARAGUAY</strong>
+          <div style="font-size:12px; margin-top:6px">Azara e/ Estados Unidos y Brazil · WhatsApp 0971 797 545</div>
+          <div style="font-size:12px; margin-top:6px">Horario: Lun–Vie · 19:00–22:00</div>
+          <div style="font-size:12px; margin-top:6px">© <span id="y"></span> Instituto Técnico Superior. Todos los derechos reservados.</div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-ghost" href="#inicio">Volver arriba</a>
+          <button class="btn btn-primary" onclick="openModal()">Pre-inscripción</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Formulario de pre-inscripción">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Pre-inscripción · TESÃ PARAGUAY</h3>
+        <button class="x" onclick="closeModal()" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="preForm" class="form">
+          <label class="full">Nombre y apellido
+            <input name="nombre" placeholder="Ej: Juan Pérez" required />
+          </label>
+
+          <label>Documento
+            <input name="documento" placeholder="CI" required />
+          </label>
+
+          <label>Teléfono / WhatsApp
+            <input name="telefono" placeholder="Ej: 0971 000 000" required />
+          </label>
+
+          <label class="full">Correo (opcional)
+            <input name="correo" type="email" placeholder="correo@ejemplo.com" />
+          </label>
+
+          <label class="full">Carrera de interés
+            <select name="carrera">
+              <option>Técnico Superior en Óptica y Contactología (2 años · mixta)</option>
+            </select>
+          </label>
+
+          <label class="full">Mensaje (opcional)
+            <input name="mensaje" placeholder="Horario preferido, consultas, etc." />
+          </label>
+
+          <p class="hint full">Al enviar, se abrirá WhatsApp con el mensaje listo para mandar al instituto.</p>
+        </form>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" type="button" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn-primary" type="button" onclick="submitPre()">Enviar por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    function openModal(){ modal.style.display = 'flex'; }
+    function closeModal(){ modal.style.display = 'none'; }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    function submitPre(){
+      const form = document.getElementById('preForm');
+      if(!form.reportValidity()) return;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const msg =
+`Hola TESÃ PARAGUAY, quiero pre-inscribirme:
+- Nombre: ${data.nombre}
+- Documento: ${data.documento}
+- Tel: ${data.telefono}
+- Correo: ${data.correo || "(no informado)"}
+- Carrera: ${data.carrera}
+- Mensaje: ${data.mensaje || "(sin mensaje)"}
+
+Horario: Lunes a viernes 19:00 a 22:00
+Dirección: Azara e/ Estados Unidos y Brazil`;
+
+      const phone = "595971797545";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+      closeModal();
+      form.reset();
+    }
+  </script>
+</body>
+</html>
