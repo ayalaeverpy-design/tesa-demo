@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TESÃ PARAGUAY | Instituto Técnico Superior</title>
-  <meta name="description" content="TESÃ PARAGUAY - Técnico Superior en Óptica y Contactología (2 años, modalidad mixta)." />
+  <title>I.T.S TESA Paraguay | Técnico Superior en Óptica y Contactología</title>
+  <meta name="description" content="I.T.S TESA Paraguay. Carrera habilitada por el Ministerio de Educación y Ciencias. Duración 4 semestres. Sede Asunción." />
 
   <style>
     :root{
-      --bg: #0b1020;
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --line: rgba(255,255,255,.12);
+      --bg: #f6f8ff;
+      --card: rgba(255,255,255,.86);
+      --text: #0b1b3a;
+      --muted: rgba(11,27,58,.72);
+      --line: rgba(31,59,115,.14);
       --accent: #1f3b73;
       --accent2: #2563eb;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow: 0 20px 60px rgba(12, 26, 62, .14);
       --radius: 18px;
       --radius2: 24px;
       --max: 1120px;
@@ -26,100 +27,199 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background:
-        radial-gradient(1200px 500px at 15% 0%, rgba(37,99,235,.22), transparent 60%),
-        radial-gradient(900px 450px at 85% 10%, rgba(31,59,115,.22), transparent 55%),
-        radial-gradient(800px 450px at 50% 100%, rgba(59,130,246,.16), transparent 60%),
+        radial-gradient(1200px 520px at 10% 0%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(31,59,115,.12), transparent 55%),
+        radial-gradient(800px 520px at 50% 100%, rgba(59,130,246,.10), transparent 60%),
         var(--bg);
       min-height:100vh;
     }
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-    .nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(14px); background: rgba(11,16,32,.65); border-bottom: 1px solid var(--line);}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
-    .brand{display:flex; align-items:center; gap:12px; min-width:220px;}
-    .logo-img{
-      width:44px; height:44px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 12px 36px rgba(0,0,0,.35);
-      object-fit: cover;
-      padding:6px;
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.72);
+      border-bottom: 1px solid var(--line);
     }
-    .brand-title{font-size:14px; line-height:1; font-weight:900;}
-    .brand-sub{font-size:11px; color:var(--muted); font-weight:700; margin-top:4px;}
-    .menu{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:flex-end;}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px;}
+    .brand{display:flex; align-items:center; gap:12px; min-width:260px;}
+    .logo-img{
+      width:62px; height:62px; border-radius:18px;
+      border:1px solid rgba(31,59,115,.20);
+      background: white;
+      box-shadow: 0 14px 38px rgba(12, 26, 62, .12);
+      object-fit: contain;
+      padding:8px; /* hace más legible el logo */
+    }
+    .brand-title{font-size:14px; line-height:1; font-weight:1000; letter-spacing:.2px}
+    .brand-sub{font-size:12px; color:var(--muted); font-weight:800; margin-top:4px;}
+
+    .menu{display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:flex-end;}
     .menu a{
       padding:10px 12px; border-radius:999px; color: var(--muted);
-      border: 1px solid transparent; transition: .2s ease; font-weight:650; font-size: 13px;
+      border: 1px solid transparent; transition: .2s ease; font-weight:800; font-size: 13px;
     }
-    .menu a:hover{color: var(--text); border-color: var(--line); background: rgba(255,255,255,.04);}
+    .menu a:hover{color: var(--text); border-color: var(--line); background: rgba(31,59,115,.06);}
 
     .btn{
       border:0; cursor:pointer; padding:10px 14px; border-radius:999px;
-      font-weight:850; transition:.2s ease; display:inline-flex; gap:10px; align-items:center; justify-content:center; white-space:nowrap;
+      font-weight:950; transition:.2s ease; display:inline-flex; gap:10px; align-items:center; justify-content:center; white-space:nowrap;
     }
     .btn-primary{
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color:white; box-shadow: 0 18px 50px rgba(37,99,235,.18);
-      border: 1px solid rgba(255,255,255,.16);
+      border: 1px solid rgba(31,59,115,.14);
     }
-    .btn-primary:hover{transform: translateY(-1px); filter: brightness(1.05)}
-    .btn-ghost{background: rgba(255,255,255,.05); color: var(--text); border: 1px solid var(--line);}
-    .btn-ghost:hover{background: rgba(255,255,255,.08)}
+    .btn-primary:hover{transform: translateY(-1px); filter: brightness(1.03)}
+    .btn-ghost{background: rgba(31,59,115,.06); color: var(--text); border: 1px solid var(--line);}
+    .btn-ghost:hover{background: rgba(31,59,115,.09)}
 
-    .hero{padding:42px 0 26px}
-    .hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:18px;}
-    .hero-card{
-      border-radius: var(--radius2); border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow: var(--shadow); padding:28px; overflow:hidden;
+    /* DROPDOWN (solo click) */
+    .dropdown{position:relative; display:inline-flex; align-items:center;}
+    .dropbtn{
+      padding:10px 12px;
+      border-radius:999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      background: transparent;
+      cursor:pointer;
+      transition: .2s ease;
+      font-weight:850;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
+    .dropbtn:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(31,59,115,.06);
+    }
+    .caret{font-weight:1000; opacity:.9}
+
+    .dropdown-menu{
+      position:absolute;
+      top: calc(100% + 10px);
+      right:0;
+      width: 270px;
+      border-radius: 16px;
+      border: 1px solid rgba(31,59,115,.16);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding:10px;
+      display:none;
+    }
+    .dropdown.open .dropdown-menu{display:block;}
+    .drop-hint{
+      font-size:11px;
+      font-weight:900;
+      color: rgba(31,59,115,.70);
+      padding:6px 10px 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .dropdown-menu a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight:850;
+      color: rgba(11,27,58,.86);
+    }
+    .dropdown-menu a:hover{
+      background: rgba(37,99,235,.08);
+      border-color: rgba(37,99,235,.18);
+    }
+
+    /* HERO */
+    .hero{padding:42px 0 18px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;}
+    .hero-card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(31,59,115,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+      box-shadow: var(--shadow);
+      padding:28px; overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 240px at 20% 0%, rgba(37,99,235,.14), transparent 60%);
+      pointer-events:none;
+    }
+
     .pill{
       display:inline-flex; gap:10px; align-items:center;
       padding:8px 12px; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: var(--muted); font-weight:750; font-size: 12px;
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(37,99,235,.06);
+      color: rgba(31,59,115,.86);
+      font-weight:900; font-size: 12px;
+      position:relative; z-index:1;
     }
-    h1{margin:14px 0 10px; font-size: clamp(30px, 3.2vw, 44px); line-height:1.05; letter-spacing:-.02em;}
-    .lead{margin: 0 0 18px; color: var(--muted); font-size: 15px; line-height: 1.65; max-width: 78ch;}
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap}
-    .mini{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; color: var(--muted); font-weight:650; font-size: 12px;}
-    .mini span{border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); padding:8px 10px; border-radius: 999px;}
+    h1{margin:14px 0 10px; font-size: clamp(28px, 3vw, 40px); line-height:1.08; letter-spacing:-.02em; position:relative; z-index:1;}
+    .lead{margin: 0 0 16px; color: var(--muted); font-size: 15px; line-height: 1.65; max-width: 78ch; position:relative; z-index:1;}
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; position:relative; z-index:1;}
+    .mini{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; color: var(--muted); font-weight:800; font-size: 12px; position:relative; z-index:1;}
+    .mini span{border:1px solid rgba(31,59,115,.14); background: rgba(255,255,255,.8); padding:8px 10px; border-radius: 999px;}
 
     .side{display:grid; gap:14px;}
-    .info-card{border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255,255,255,.05); padding:16px;}
+    .info-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.78);
+      padding:16px;
+      box-shadow: 0 12px 30px rgba(12, 26, 62, .08);
+    }
     .info-card h3{margin:0 0 8px; font-size:14px}
     .info-card p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
 
-    section{padding:24px 0}
+    section{padding:22px 0}
     .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:12px;}
     .section-title h2{margin:0; font-size: 18px; letter-spacing:.2px;}
     .section-title p{margin:0; color: var(--muted); font-size: 13px;}
     .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
     .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
-    .card{border-radius: var(--radius); border: 1px solid var(--line); background: rgba(255,255,255,.05); padding:16px;}
-    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.80);
+      padding:16px;
+      box-shadow: 0 12px 30px rgba(12, 26, 62, .08);
+    }
+    .card p{margin:0; color:var(--muted); line-height:1.75; font-size:14px}
 
+    /* Programa */
     .program{
       border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.16);
-      background: linear-gradient(135deg, rgba(31,59,115,.18), rgba(37,99,235,.16));
+      border: 1px solid rgba(31,59,115,.16);
+      background: linear-gradient(135deg, rgba(37,99,235,.08), rgba(31,59,115,.06));
       padding:18px;
       box-shadow: var(--shadow);
     }
     .program-top{display:flex; align-items:flex-start; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:12px;}
     .kpis{display:flex; gap:10px; flex-wrap:wrap}
-    .kpi{border:1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.05); border-radius: 14px; padding:10px 12px; min-width: 200px;}
+    .kpi{
+      border:1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.82);
+      border-radius: 14px;
+      padding:10px 12px;
+      min-width: 210px;
+    }
     .kpi b{display:block; font-size:16px}
-    .kpi span{color:var(--muted); font-size:12px}
+    .kpi span{color:var(--muted); font-size:12px; font-weight:800}
 
     .accordion{display:grid; gap:10px; margin-top:12px;}
     details{
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.82);
       overflow:hidden;
     }
     summary{
@@ -130,32 +230,33 @@
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      font-weight:900;
+      font-weight:1000;
+      color: rgba(11,27,58,.92);
     }
     summary::-webkit-details-marker{display:none}
     .sum-left{display:flex; gap:10px; align-items:center}
     .badge{
       font-size:12px;
-      font-weight:900;
+      font-weight:1000;
       padding:6px 10px;
       border-radius:999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
+      border: 1px solid rgba(31,59,115,.16);
+      background: rgba(37,99,235,.06);
+      color: rgba(31,59,115,.92);
       white-space:nowrap;
     }
     .chev{
       width:34px; height:34px;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(37,99,235,.06);
       display:grid; place-items:center;
-      color: var(--muted);
-      font-weight:900;
+      color: rgba(31,59,115,.90);
+      font-weight:1000;
       transition: .2s ease;
       flex: 0 0 auto;
     }
-    details[open] .chev{transform: rotate(180deg); color: var(--text)}
+    details[open] .chev{transform: rotate(180deg);}
     .details-body{padding: 0 14px 14px;}
     .subjects{
       margin:10px 0 0;
@@ -163,125 +264,125 @@
       color: var(--muted);
       line-height:1.9;
       font-size:14px;
+      font-weight:800;
     }
     .subjects li{padding:2px 0}
 
+    /* Autoridades */
     .person{display:flex; gap:12px; align-items:flex-start;}
     .avatar{
       width:44px; height:44px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(31,59,115,.16);
+      background: rgba(37,99,235,.08);
       display:grid; place-items:center;
-      font-weight:900;
-      color: rgba(255,255,255,.9);
+      font-weight:1000;
+      color: rgba(31,59,115,.95);
     }
-    .person small{display:block; color: var(--muted); margin-top:4px}
+    .person small{display:block; color: var(--muted); margin-top:4px; font-weight:800}
 
-    footer{padding:28px 0 40px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 18px;}
+    /* Novedades (imágenes) */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .shot{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 12px 30px rgba(12, 26, 62, .08);
+      min-height: 220px;
+      position:relative;
+    }
+    .shot img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .cap{
+      position:absolute;
+      left:12px; right:12px; bottom:12px;
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(31,59,115,.14);
+      color: rgba(11,27,58,.88);
+      font-weight:900;
+      font-size:12px;
+      backdrop-filter: blur(10px);
+    }
+    .c1{grid-column: span 7;}
+    .c2{grid-column: span 5;}
+    .c3{grid-column: span 5;}
+    .c4{grid-column: span 7;}
+
+    /* Preinscripción (en construcción) */
+    .soon{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(31,59,115,.16);
+      background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(255,255,255,.84));
+      box-shadow: var(--shadow);
+      padding:22px;
+      overflow:hidden;
+      position:relative;
+    }
+    .soon:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(500px 240px at 10% 0%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(600px 260px at 90% 20%, rgba(31,59,115,.14), transparent 55%);
+      pointer-events:none;
+      animation: floaty 6s ease-in-out infinite;
+    }
+    @keyframes floaty{
+      0%,100%{transform: translateY(0)}
+      50%{transform: translateY(-8px)}
+    }
+    .soon-inner{position:relative; z-index:1; display:grid; gap:12px;}
+    .icon-badge{
+      width:64px; height:64px;
+      border-radius: 20px;
+      border: 1px solid rgba(31,59,115,.16);
+      background: rgba(255,255,255,.9);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 10px 24px rgba(12, 26, 62, .10);
+    }
+    .countdown{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:4px;
+    }
+    .cd{
+      min-width: 120px;
+      border-radius: 16px;
+      border: 1px solid rgba(31,59,115,.14);
+      background: rgba(255,255,255,.86);
+      padding:10px 12px;
+      box-shadow: 0 10px 22px rgba(12, 26, 62, .08);
+    }
+    .cd b{display:block; font-size:18px}
+    .cd span{display:block; color:var(--muted); font-weight:900; font-size:12px}
+
+    footer{
+      padding:28px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      background: rgba(255,255,255,.55);
+    }
     .foot{display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
 
-    .hint{margin:8px 0 0; color: var(--muted); font-size:12px; line-height:1.6}
-
     @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
-    @media (max-width: 640px){
+    @media (max-width: 820px){
+      .c1,.c2,.c3,.c4{grid-column: span 12;}
+    }
+    @media (max-width: 720px){
       .menu{display:none}
       .grid-2,.grid-3{grid-template-columns:1fr}
       .kpi{min-width: 100%}
-    }
-
-    /* ==========================
-       ✅ PREINSCRIPCIÓN: PRÓXIMAMENTE + COUNTDOWN + ICONO
-       ========================== */
-    .soon{
-      position:relative;
-      overflow:hidden;
-      text-align:center;
-      padding:28px;
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.16);
-      background: linear-gradient(135deg, rgba(31,59,115,.20), rgba(37,99,235,.14));
-      box-shadow: var(--shadow);
-    }
-    .soon::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(420px 180px at 20% 20%, rgba(255,255,255,.10), transparent 60%),
-                  radial-gradient(520px 220px at 85% 30%, rgba(37,99,235,.18), transparent 60%),
-                  radial-gradient(520px 220px at 50% 90%, rgba(31,59,115,.22), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
-    }
-    .soon > *{ position:relative; z-index:1; }
-
-    .soon-header{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:10px;
-    }
-    .inst-icon{
-      width:56px; height:56px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 12px 36px rgba(0,0,0,.35);
-      object-fit: contain;
-      padding:10px;
-    }
-
-    .shine{display:inline-flex; align-items:center; justify-content:center; gap:10px;}
-    .pulse-dot{
-      width:10px; height:10px; border-radius:999px;
-      background: rgba(255,255,255,.85);
-      box-shadow: 0 0 0 0 rgba(255,255,255,.45);
-      animation: pulse 1.4s infinite;
-    }
-    @keyframes pulse{
-      0%{ box-shadow: 0 0 0 0 rgba(255,255,255,.35); transform: scale(1); opacity:.9;}
-      70%{ box-shadow: 0 0 0 14px rgba(255,255,255,0); transform: scale(1.05); opacity:1;}
-      100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0); transform: scale(1); opacity:.9;}
-    }
-
-    .floaty{display:inline-block; animation: floaty 2.8s ease-in-out infinite;}
-    @keyframes floaty{
-      0%,100%{ transform: translateY(0px); }
-      50%{ transform: translateY(-4px); }
-    }
-
-    .soon-title{margin:10px 0 6px; font-size: 22px; letter-spacing:-.02em;}
-    .soon-text{margin:0 auto; max-width: 72ch; color: var(--muted); line-height: 1.7; font-size:14px;}
-
-    .countdown{
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .timebox{
-      min-width: 110px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      padding:12px 14px;
-    }
-    .timebox b{display:block; font-size: 26px; letter-spacing:-.02em;}
-    .timebox span{
-      display:block;
-      margin-top:4px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing:.2px;
-    }
-    .soon-actions{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:16px;
     }
   </style>
 </head>
@@ -291,19 +392,45 @@
     <div class="container">
       <div class="nav-inner">
         <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <img class="logo-img" src="Logo.jpg" alt="Logo TESÃ Paraguay" />
+          <img class="logo-img" src="Logo.jpg" alt="Logo TESA Paraguay" />
           <div>
-            <div class="brand-title">TESÃ PARAGUAY</div>
+            <div class="brand-title">I.T.S TESA Paraguay</div>
             <div class="brand-sub">Instituto Técnico Superior</div>
           </div>
         </a>
 
         <nav class="menu" aria-label="Secciones">
-          <a href="#inicio">INICIO</a>
-          <a href="#mision">MISIÓN</a>
-          <a href="#vision">VISIÓN</a>
-          <a href="#historia">HISTORIA</a>
-          <a href="#directorio">DIRECTORIO</a>
+          <a href="#inicio">Inicio</a>
+
+          <div class="dropdown" aria-label="Institucional">
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+              Institucional <span class="caret">▾</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <div class="drop-hint">Secciones</div>
+              <a href="#historia" role="menuitem">📖 Historia</a>
+              <a href="#mision" role="menuitem">🎯 Misión</a>
+              <a href="#vision" role="menuitem">🔭 Visión</a>
+              <a href="#valores" role="menuitem">💠 Valores</a>
+              <a href="#autoridades" role="menuitem">👥 Autoridades</a>
+              <a href="#normas" role="menuitem">📌 Normas Institucionales</a>
+            </div>
+          </div>
+
+          <a href="#novedades">Novedades</a>
+
+          <div class="dropdown" aria-label="Contactos">
+            <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+              Contactos <span class="caret">▾</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <div class="drop-hint">Canales</div>
+              <a href="https://wa.me/595971797545" target="_blank" rel="noopener" role="menuitem">📲 Secretaría: 0971 797 545</a>
+              <a href="mailto:institutotesapy@gmail.com" role="menuitem">✉️ Correo: institutotesapy@gmail.com</a>
+              <a href="#contactos" role="menuitem">📍 Ver sección Contactos</a>
+            </div>
+          </div>
+
           <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
         </nav>
 
@@ -316,20 +443,22 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-card">
-          <div class="pill">🎓 Técnico Superior · 2 años · modalidad mixta</div>
-          <h1>TESÃ PARAGUAY<br/>Técnico Superior en Óptica y Contactología</h1>
+          <div class="pill">🎓 Carrera habilitada por el Ministerio de Educación y Ciencias</div>
+          <h1>I.T.S TESA Paraguay<br/>TÉCNICO SUPERIOR EN ÓPTICA Y CONTACTOLOGÍA</h1>
           <p class="lead">
             Formación con enfoque práctico y académico para desarrollar competencias profesionales en óptica,
             contactología y atención integral en servicios vinculados a la salud visual.
           </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#preinscripcion">✨ Quiero pre-inscribirme</a>
+            <a class="btn btn-primary" href="#preinscripcion">✨ Pre-inscripción</a>
             <a class="btn btn-ghost" href="#plan">Ver plan de estudios</a>
           </div>
+
           <div class="mini">
             <span>🕒 Lunes a viernes · 19:00 a 22:00</span>
-            <span>📌 Teoría + práctica</span>
-            <span>🧪 Taller/laboratorio</span>
+            <span>📍 Sede: Asunción</span>
+            <span>⏳ Duración: 4 semestres</span>
           </div>
         </div>
 
@@ -354,47 +483,118 @@
     </div>
   </header>
 
+  <!-- INSTITUCIONAL -->
+  <section id="historia">
+    <div class="container">
+      <div class="card">
+        <div class="section-title">
+          <h2>Historia</h2>
+          <p>Nuestro recorrido</p>
+        </div>
+        <p>
+          I.T.S TESA Paraguay nace con el objetivo de brindar formación sólida y accesible en óptica y contactología,
+          priorizando la práctica, la actualización permanente y el acompañamiento al estudiante.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container grid-2">
       <div id="mision" class="card">
         <div class="section-title">
-          <h2>MISIÓN</h2>
+          <h2>Misión</h2>
           <p>Qué hacemos</p>
         </div>
         <p>
-          Formar profesionales en óptica con base científica y práctica, promoviendo la ética,
+          Formar profesionales en óptica y contactología con base científica y práctica, promoviendo la ética,
           la calidad de servicio y el compromiso con la salud visual.
         </p>
       </div>
 
       <div id="vision" class="card">
         <div class="section-title">
-          <h2>VISIÓN</h2>
+          <h2>Visión</h2>
           <p>Hacia dónde vamos</p>
         </div>
         <p>
-          Ser un instituto referente en la formación de profesionales del área,
-          reconocido por su excelencia académica e innovación educativa.
+          Ser un instituto referente en la formación de profesionales del área, reconocido por su excelencia académica,
+          innovación educativa y orientación al servicio.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="historia">
+  <section id="valores">
     <div class="container">
       <div class="card">
         <div class="section-title">
-          <h2>HISTORIA</h2>
-          <p>Nuestro recorrido</p>
+          <h2>Valores</h2>
+          <p>Nuestros pilares</p>
         </div>
         <p>
-          TESÃ PARAGUAY nace con el objetivo de brindar formación sólida y accesible en óptica y contactología,
-          priorizando la práctica, la actualización y el acompañamiento al estudiante.
+          Ética profesional · Responsabilidad · Respeto · Calidad académica · Compromiso con el estudiante ·
+          Vocación de servicio · Mejora continua.
         </p>
       </div>
     </div>
   </section>
 
+  <section id="autoridades">
+    <div class="container">
+      <div class="section-title">
+        <h2>Autoridades</h2>
+        <p>Equipo institucional</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="person">
+            <div class="avatar">YO</div>
+            <div>
+              <strong>Directora</strong>
+              <small>Yolanda Ovando</small>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="person">
+            <div class="avatar">AD</div>
+            <div>
+              <strong>Administración</strong>
+              <small>WhatsApp: 0971 797 545</small>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="person">
+            <div class="avatar">AC</div>
+            <div>
+              <strong>Área Académica</strong>
+              <small>Contacto: 0971 797 545</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="normas">
+    <div class="container">
+      <div class="card">
+        <div class="section-title">
+          <h2>Normas Institucionales</h2>
+          <p>Convivencia y reglamento</p>
+        </div>
+        <p>
+          Este apartado se publicará con el documento institucional (asistencia, evaluaciones, prácticas, uso de plataforma,
+          y lineamientos académicos). Próximamente disponible en formato descargable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN -->
   <section id="plan">
     <div class="container">
       <div class="program">
@@ -403,23 +603,23 @@
             <div class="pill">📘 Plan de estudios</div>
             <h2 style="margin-top:10px">Técnico Superior en Óptica y Contactología</h2>
             <p class="lead" style="margin:10px 0 0; max-width: 80ch;">
-              Duración: <strong>2 años</strong> (4 semestres) · Modalidad: <strong>mixta</strong> ·
-              Horario: <strong>Lunes a viernes 19:00 a 22:00</strong>.
+              Duración: <strong>4 semestres</strong> · Modalidad: <strong>mixta</strong> ·
+              Horario: <strong>Lunes a viernes 19:00 a 22:00</strong> · Sede: <strong>Asunción</strong>.
             </p>
           </div>
 
           <div class="kpis">
             <div class="kpi">
               <b>Duración</b>
-              <span>2 años (4 semestres)</span>
+              <span>4 semestres</span>
             </div>
             <div class="kpi">
               <b>Horario</b>
               <span>Lun–Vie · 19:00–22:00</span>
             </div>
             <div class="kpi">
-              <b>Pre-inscripción</b>
-              <span>Próximamente</span>
+              <b>Sede</b>
+              <span>Asunción</span>
             </div>
           </div>
         </div>
@@ -511,82 +711,109 @@
 
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
           <a class="btn btn-primary" href="#preinscripcion">Pre-inscripción</a>
-          <a class="btn btn-ghost" href="#directorio">Ver directorio</a>
+          <a class="btn btn-ghost" href="#novedades">Ver novedades</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="directorio">
-    <div class="container">
-      <div class="section-title">
-        <h2>DIRECTORIO</h2>
-        <p>Equipo institucional</p>
-      </div>
+  <!-- NOVEDADES (con imágenes online para que se vean) -->
+  <section id="novedades">
+	  <div class="container">
+		<div class="section-title">
+		  <h2>Novedades</h2>
+		  <p>Taller · Contactología · Clases virtuales</p>
+		</div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="person">
-            <div class="avatar">YO</div>
-            <div>
-              <strong>Directora</strong>
-              <small>Yolanda Ovando</small>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="person">
-            <div class="avatar">AD</div>
-            <div>
-              <strong>Administración</strong>
-              <small>WhatsApp: 0971 797 545</small>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="person">
-            <div class="avatar">AC</div>
-            <div>
-              <strong>Área Académica</strong>
-              <small>Contacto: 0971 797 545</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+		<div class="gallery">
+		  <div class="shot c1">
+			<img src="novedades_01.jpg" alt="Trabajo en taller de óptica" loading="lazy" />
+			<div class="cap">Trabajo en taller de óptica</div>
+		  </div>
 
-  <!-- ✅ NUEVA SECCIÓN: PREINSCRIPCIÓN EN CONSTRUCCIÓN -->
+		  <div class="shot c2">
+			<img src="novedades_05.jpg" alt="Prácticas de contactología" loading="lazy" />
+			<div class="cap">Prácticas de contactología</div>
+		  </div>
+
+		  <div class="shot c3">
+			<img src="novedades_06.jpg" alt="Clases virtuales" loading="lazy" />
+			<div class="cap">Clases virtuales</div>
+		  </div>
+
+		  <div class="shot c4">
+			<img src="novedades_02.jpg" alt="Modalidad mixta (clase/estudio)" loading="lazy" />
+			<div class="cap">Modalidad mixta</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+  <!-- PREINSCRIPCIÓN EN CONSTRUCCIÓN -->
   <section id="preinscripcion">
     <div class="container">
+      <div class="section-title">
+        <h2>Pre-inscripción</h2>
+        <p>Próximamente disponible</p>
+      </div>
+
       <div class="soon">
-        <div class="soon-header">
-          <img class="inst-icon floaty" src="Logo.jpg" alt="TESÃ Paraguay" />
-          <div class="pill shine"><span class="pulse-dot"></span> Próximamente</div>
+        <div class="soon-inner">
+          <div class="icon-badge" aria-hidden="true">
+            <!-- ícono institucional (libro + lentes) -->
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              <path d="M4 5.5C4 4.12 5.12 3 6.5 3H11v18H6.5C5.12 21 4 19.88 4 18.5V5.5Z" stroke="#1f3b73" stroke-width="1.6"/>
+              <path d="M20 5.5C20 4.12 18.88 3 17.5 3H13v18h4.5c1.38 0 2.5-1.12 2.5-2.5V5.5Z" stroke="#1f3b73" stroke-width="1.6"/>
+              <path d="M8.2 12.2c.55-.55 1.45-.55 2 0" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M13.8 12.2c.55-.55 1.45-.55 2 0" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M10.2 12.2h3.6" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="pill">🚧 En construcción</div>
+          <h2 style="margin:0">Estamos habilitando el formulario de pre-inscripción</h2>
+          <p class="lead" style="margin:0">
+            Mientras tanto, podés contactar a Secretaría por WhatsApp: <strong>0971 797 545</strong>.
+          </p>
+
+          <div class="countdown" aria-label="Cuenta regresiva">
+            <div class="cd"><b id="d">--</b><span>DÍAS</span></div>
+            <div class="cd"><b id="h">--</b><span>HORAS</span></div>
+            <div class="cd"><b id="m">--</b><span>MINUTOS</span></div>
+            <div class="cd"><b id="s">--</b><span>SEGUNDOS</span></div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
+            <a class="btn btn-primary" href="https://wa.me/595971797545" target="_blank" rel="noopener">📲 Escribir a Secretaría</a>
+            <a class="btn btn-ghost" href="mailto:institutotesapy@gmail.com">✉️ Enviar correo</a>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <h2 class="soon-title">Pre-inscripción en preparación</h2>
-        <p class="soon-text">
-          Estamos habilitando el sistema de pre-inscripción online para el
-          <strong>Técnico Superior en Óptica y Contactología</strong>.
-          Mientras tanto, podés escribirnos por WhatsApp y te guiamos.
-        </p>
+  <!-- CONTACTOS -->
+  <section id="contactos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contactos</h2>
+        <p>Escribinos o vení a la sede</p>
+      </div>
 
-        <div class="countdown" aria-label="Cuenta regresiva">
-          <div class="timebox"><b id="cdDays">—</b><span>DÍAS</span></div>
-          <div class="timebox"><b id="cdHours">—</b><span>HORAS</span></div>
-          <div class="timebox"><b id="cdMins">—</b><span>MIN</span></div>
-          <div class="timebox"><b id="cdSecs">—</b><span>SEG</span></div>
+      <div class="grid-2">
+        <div class="card">
+          <p>
+            <strong>Secretaría:</strong> 0971 797 545<br/>
+            <strong>Correo institucional:</strong> institutotesapy@gmail.com
+          </p>
         </div>
-
-        <div class="soon-actions">
-          <a class="btn btn-primary" href="https://wa.me/595971797545" target="_blank" rel="noopener">📲 Contactar por WhatsApp</a>
-          <a class="btn btn-ghost" href="#inicio">← Volver al inicio</a>
+        <div class="card">
+          <p>
+            <strong>Dirección:</strong> Azara e/ Estados Unidos y Brazil<br/>
+            <strong>Sede:</strong> Asunción<br/>
+            <strong>Horario:</strong> Lunes a viernes · 19:00 a 22:00
+          </p>
         </div>
-
-        <p class="hint" style="margin-top:14px;">
-          Horario: Lun–Vie 19:00–22:00 · Dirección: Azara e/ Estados Unidos y Brazil
-        </p>
       </div>
     </div>
   </section>
@@ -595,9 +822,9 @@
     <div class="container">
       <div class="foot">
         <div>
-          <strong style="color:var(--text)">TESÃ PARAGUAY</strong>
+          <strong style="color:var(--text)">I.T.S TESA Paraguay</strong>
           <div style="font-size:12px; margin-top:6px">Azara e/ Estados Unidos y Brazil · WhatsApp 0971 797 545</div>
-          <div style="font-size:12px; margin-top:6px">Horario: Lun–Vie · 19:00–22:00</div>
+          <div style="font-size:12px; margin-top:6px">Correo: institutotesapy@gmail.com</div>
           <div style="font-size:12px; margin-top:6px">© <span id="y"></span> Instituto Técnico Superior. Todos los derechos reservados.</div>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap">
@@ -608,66 +835,69 @@
     </div>
   </footer>
 
-  <!-- ✅ MODAL DESACTIVADO (lo podés reactivar cuando quieras)
-  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Formulario de pre-inscripción">
-    <div class="modal">
-      <div class="modal-head">
-        <h3>Pre-inscripción · TESÃ PARAGUAY</h3>
-        <button class="x" onclick="closeModal()" aria-label="Cerrar">✕</button>
-      </div>
-      <div class="modal-body">
-        <form id="preForm" class="form">
-          ...
-        </form>
-      </div>
-      <div class="modal-actions">
-        <button class="btn btn-ghost" type="button" onclick="closeModal()">Cancelar</button>
-        <button class="btn btn-primary" type="button" onclick="submitPre()">Enviar por WhatsApp</button>
-      </div>
-    </div>
-  </div>
-  -->
-
   <script>
+    // Año
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // ✅ Cuenta regresiva (EDITÁ la fecha si querés)
-    // Paraguay: -03:00
-    const launchDate = new Date("2026-03-01T19:00:00-03:00"); // ← cambiá esta fecha
+    // Dropdowns por click (no navega al click del padre)
+    document.querySelectorAll('.dropdown .dropbtn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dd = btn.closest('.dropdown');
+        const isOpen = dd.classList.contains('open');
 
-    const elD = document.getElementById("cdDays");
-    const elH = document.getElementById("cdHours");
-    const elM = document.getElementById("cdMins");
-    const elS = document.getElementById("cdSecs");
+        // Cierra otros
+        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
 
-    function pad2(n){ return String(n).padStart(2, "0"); }
+        // Toggle actual
+        if (!isOpen) dd.classList.add('open');
+
+        // aria-expanded
+        document.querySelectorAll('.dropdown .dropbtn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+
+    // Cierra al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+        document.querySelectorAll('.dropdown .dropbtn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      }
+    });
+
+    // Cierra al seleccionar item (y navega a su sección)
+    document.querySelectorAll('.dropdown-menu a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+        document.querySelectorAll('.dropdown .dropbtn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      });
+    });
+
+    // Cuenta regresiva (configurable)
+    // Cambiá la fecha acá:
+    const launch = new Date();
+    launch.setDate(launch.getDate() + 14); // +14 días (demo)
+
+    const $d = document.getElementById('d');
+    const $h = document.getElementById('h');
+    const $m = document.getElementById('m');
+    const $s = document.getElementById('s');
 
     function tick(){
-      const now = new Date();
-      const diff = launchDate - now;
+      const now = new Date().getTime();
+      const diff = Math.max(0, launch.getTime() - now);
 
-      if (!elD || !elH || !elM || !elS) return;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
 
-      if (diff <= 0){
-        elD.textContent = "0";
-        elH.textContent = "00";
-        elM.textContent = "00";
-        elS.textContent = "00";
-        return;
-      }
-
-      const sec = Math.floor(diff / 1000);
-      const days = Math.floor(sec / 86400);
-      const hours = Math.floor((sec % 86400) / 3600);
-      const mins = Math.floor((sec % 3600) / 60);
-      const secs = sec % 60;
-
-      elD.textContent = String(days);
-      elH.textContent = pad2(hours);
-      elM.textContent = pad2(mins);
-      elS.textContent = pad2(secs);
+      $d.textContent = String(days).padStart(2,'0');
+      $h.textContent = String(hours).padStart(2,'0');
+      $m.textContent = String(mins).padStart(2,'0');
+      $s.textContent = String(secs).padStart(2,'0');
     }
-
     tick();
     setInterval(tick, 1000);
   </script>
