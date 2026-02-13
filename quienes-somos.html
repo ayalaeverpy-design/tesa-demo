@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiénes somos | APOYA</title>
+  <meta name="description" content="Misión y visión de APOYA, Asociación Paraguaya de Ópticos y Afines." />
+  <link rel="icon" href="assets_apoya_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar" id="top">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="APOYA - Inicio">
+        <img src="assets_apoya_logo.png" alt="Logo APOYA" class="brand__logo" />
+        <div class="brand__text">
+          <div class="brand__name">APOYA</div>
+          <div class="brand__tag">Asociación Paraguaya de Ópticos y Afines</div>
+        </div>
+      </a>
+
+      <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" data-nav>
+        <a href="quienes-somos.html" aria-current="page">Quiénes somos</a>
+        <a href="valores.html">Valores</a>
+        <a href="asociate.html">Asociate</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="tesa/index.html">TESA</a>
+        <a href="index.html#contacto" class="nav__cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero">
+      <div class="container">
+        <p class="pill">Institucional</p>
+        <h1>Quiénes somos</h1>
+        <p class="lead">Una entidad gremial y profesional comprometida con la salud visual.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <article class="card">
+            <h3>Misión</h3>
+            <p>
+              Representar, integrar y fortalecer a los ópticos y profesionales afines del Paraguay,
+              defendiendo sus intereses gremiales y promoviendo la capacitación permanente,
+              la práctica ética y la excelencia sanitaria, con el fin de contribuir al cuidado y mejoramiento
+              de la salud visual de la población.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Visión</h3>
+            <p>
+              Consolidarse como la entidad gremial y profesional referente del sector óptico en el Paraguay,
+              reconocida por su liderazgo institucional, la defensa de sus asociados, la promoción de estándares
+              sanitarios de calidad y su compromiso con el bienestar visual de la sociedad.
+            </p>
+          </article>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="card">
+          <h3>Capacitación y formación</h3>
+          <p>
+            APOYA impulsa la actualización profesional del sector mediante el <strong>Instituto TESA</strong>.
+          </p>
+          <a class="btn btn--ghost" href="tesa/index.html">Ir al Instituto TESA</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <div class="footer__row">
+          <img src="assets_apoya_logo.png" alt="" class="footer__logo" />
+          <div>
+            <div class="footer__name">APOYA</div>
+            <div class="footer__tag muted">Asociación Paraguaya de Ópticos y Afines</div>
+          </div>
+        </div>
+        <p class="muted footer__p">
+          Eduardo Victor Hardo N°684 e/O'leary y 15 de agosto, Asunción, Paraguay<br/>
+          Tel: 0983 090082
+        </p>
+      </div>
+
+      <div class="footer__links">
+        <div class="footer__col">
+          <div class="footer__h">Enlaces</div>
+          <a href="quienes-somos.html">Quiénes somos</a>
+          <a href="valores.html">Valores</a>
+          <a href="asociate.html">Asociate</a>
+          <a href="novedades.html">Novedades</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__h">Capacitación</div>
+          <a href="tesa/index.html">Instituto TESA</a>
+          <a target="_blank" rel="noopener" href="https://www.facebook.com/p/Asociaci%C3%B3n-Paraguaya-de-Opticos-y-Afines-APOYA-100066434385766/?locale=es_LA">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span class="muted">© <span id="year"></span> APOYA. Todos los derechos reservados.</span>
+      <a class="muted" href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
